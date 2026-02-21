@@ -422,6 +422,12 @@ p:last-child {
   cursor: pointer;
   padding: 8px;
   color: var(--text-primary);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile header lang toggle (hidden on desktop) */
+.nav__mobile-lang {
+  display: none;
 }
 
 /* Mobile nav */
@@ -1350,7 +1356,15 @@ p:last-child {
   }
 
   .nav__mobile-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav__mobile-lang {
+    display: flex !important;
+    align-items: center;
+    gap: 4px;
   }
 
   .hero {
