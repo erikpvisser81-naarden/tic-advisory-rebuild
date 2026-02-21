@@ -281,10 +281,11 @@
       nav.classList.toggle('nav--scrolled', window.scrollY > 10);
     }, { passive: true });
 
-    // Reveal animations
-    requestIdleCallback(() => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+    // Reveal animations (with polyfill for older mobile browsers)
+    var ric = window.requestIdleCallback || function(cb) { setTimeout(cb, 1); };
+    ric(function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
             observer.unobserve(entry.target);
@@ -292,7 +293,7 @@
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
     });
   </script>
 

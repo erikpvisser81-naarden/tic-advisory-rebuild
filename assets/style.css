@@ -1296,6 +1296,7 @@ p:last-child {
   border-top: 1px solid var(--border-light);
   box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
   padding: 12px 20px;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
 }
 
 .sticky-cta__inner {
@@ -1366,9 +1367,10 @@ p:last-child {
   }
 
   .hero__image img {
-    max-height: 240px;
+    max-height: 200px;
     object-fit: cover;
     width: 100%;
+    border-radius: var(--radius-md);
   }
 
   .page-header {
@@ -1376,12 +1378,24 @@ p:last-child {
   }
 
   .hero__trust {
-    gap: 24px;
+    gap: 16px 24px;
     flex-wrap: wrap;
+  }
+
+  .hero__trust-divider {
+    display: none;
+  }
+
+  .hero__trust-item {
+    flex: 0 0 calc(50% - 12px);
   }
 
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 24px;
   }
 
   .stats__grid {
@@ -1418,6 +1432,24 @@ p:last-child {
 
   .sticky-cta {
     display: block;
+  }
+
+  body {
+    padding-bottom: 72px;
+  }
+
+  h1 { font-size: clamp(28px, 7vw, 40px); }
+  h2 { font-size: clamp(22px, 5.5vw, 32px); }
+
+  .hero__title {
+    font-size: clamp(28px, 7vw, 44px);
+  }
+
+  .usp-card,
+  .testimonial,
+  .audience-card,
+  .location-card {
+    padding: 24px;
   }
 
   .credentials-grid {
@@ -1458,13 +1490,24 @@ p:last-child {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-  will-change: transform, opacity;
 }
 
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
-  will-change: auto;
+}
+
+/* Fallback: if JS fails, show content after 1.5s */
+@keyframes revealFallback {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  animation: revealFallback 0s 1.5s forwards;
+}
+
+.reveal.visible {
+  animation: none;
 }
 
 /* ============================================
