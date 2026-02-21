@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Reviews | TIC Advisory</title>
+  <meta name="description" content="Onafhankelijke business reviews die helder inzicht geven in de financiële gezondheid van uw onderneming. TIC Advisory analyseert, benchmarkt en adviseert.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230b273f'/><text x='50' y='68' font-family='sans-serif' font-size='48' font-weight='bold' fill='%234ebecf' text-anchor='middle'>TIC</text></svg>">
+  <style>
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .approach-step {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      position: relative;
+    }
+    .approach-step__number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(78, 190, 207, 0.12), rgba(168, 57, 140, 0.08));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--tic-purple);
+      margin-bottom: 20px;
+    }
+    .approach-step__title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    .approach-step__desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 24px;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+    }
+    .benefit-item__icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, rgba(78, 190, 207, 0.12), rgba(168, 57, 140, 0.08));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .benefit-item__title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--text-primary);
+    }
+    .benefit-item__desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .use-cases {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .use-case {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 24px;
+      background: var(--bg-light);
+      border-radius: var(--radius-md);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    .use-case__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--tic-purple);
+      flex-shrink: 0;
+    }
+    @media (max-width: 1024px) {
+      .approach-grid { grid-template-columns: 1fr; }
+      .content-split { grid-template-columns: 1fr; gap: 40px; }
+      .content-split--reverse { direction: ltr; }
+    }
+    @media (max-width: 768px) {
+      .benefits-grid { grid-template-columns: 1fr; }
+      .use-cases { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <svg class="nav__logo-icon" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="28" font-family="Inter, sans-serif" font-size="30" font-weight="900" fill="#191a1a">TIC</text>
+          <text x="68" y="28" font-family="Inter, sans-serif" font-size="22" font-weight="400" fill="#3a3a3a">advisory</text>
+          <text x="68" y="38" font-family="Inter, sans-serif" font-size="9" font-weight="400" fill="#888" letter-spacing="2.5">due diligence</text>
+          <rect x="155" y="32" width="10" height="4" fill="#4EBECF"/>
+          <rect x="165" y="32" width="10" height="4" fill="#D82785"/>
+          <rect x="175" y="32" width="10" height="4" fill="#ECDA1A"/>
+          <rect x="185" y="32" width="5" height="4" fill="#E41C28"/>
+        </svg>
+      </a>
+      <div class="nav__links">
+        <a href="../diensten.html" class="nav__link nav__link--active">Diensten</a>
+        <a href="../voor-wie.html" class="nav__link">Voor wie</a>
+        <a href="../wie-zijn-wij.html" class="nav__link">Wie zijn wij</a>
+        <a href="../credentials.html" class="nav__link">Credentials</a>
+        <a href="../internationaal.html" class="nav__link">Internationaal</a>
+        <div class="lang-toggle">
+          <button class="lang-toggle__btn lang-toggle__btn--active" data-lang="nl">NL</button>
+          <button class="lang-toggle__btn" data-lang="en">EN</button>
+        </div>
+        <a href="../contact.html" class="btn btn--primary btn--sm nav__cta">Vrijblijvend gesprek <span class="btn__arrow">&rarr;</span></a>
+      </div>
+      <button class="nav__mobile-toggle" id="mobileToggle" aria-label="Menu openen">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="../diensten.html" class="nav__mobile-link">Diensten</a>
+      <a href="../voor-wie.html" class="nav__mobile-link">Voor wie</a>
+      <a href="../wie-zijn-wij.html" class="nav__mobile-link">Wie zijn wij</a>
+      <a href="../credentials.html" class="nav__mobile-link">Credentials</a>
+      <a href="../internationaal.html" class="nav__mobile-link">Internationaal</a>
+      <a href="../werken-bij.html" class="nav__mobile-link">Werken bij</a>
+      <div class="lang-toggle" style="display:flex;gap:8px;padding:14px 0;border-bottom:1px solid #e2e8f0;">
+        <button class="lang-toggle__btn lang-toggle__btn--active" data-lang="nl">NL</button>
+        <button class="lang-toggle__btn" data-lang="en">EN</button>
+      </div>
+      <div class="nav__mobile-cta">
+        <a href="../contact.html" class="btn btn--primary" style="width:100%;justify-content:center;">Vrijblijvend gesprek &rarr;</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="page-header">
+    <div class="container">
+      <div class="page-header__eyebrow">Business Reviews</div>
+      <h1 class="page-header__title">Helder inzicht in uw onderneming.</h1>
+      <p class="page-header__subtitle">Een onafhankelijke financiële doorlichting die laat zien waar u staat, waar de kansen liggen en wat aandacht verdient.</p>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEM ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="content-split">
+        <div class="content-block reveal">
+          <div class="section__eyebrow">De uitdaging</div>
+          <h2 class="section__title">U wilt weten hoe uw bedrijf er financieel werkelijk voor staat.</h2>
+          <p>Niet op basis van gevoel, maar op basis van feiten. Interne rapportages geven vaak een beperkt beeld. Marktveranderingen, operationele inefficiënties en verborgen risico's blijven onderbelicht zonder een onafhankelijke blik van buitenaf.</p>
+          <p>Een business review geeft u dat objectieve beeld: helder, onderbouwd en direct bruikbaar voor uw strategische beslissingen.</p>
+        </div>
+        <div class="content-block reveal">
+          <div style="background: var(--bg-light); border-radius: var(--radius-lg); padding: 40px;">
+            <h3 style="margin-bottom: 20px;">Vragen die wij beantwoorden</h3>
+            <ul>
+              <li>Hoe presteert uw onderneming ten opzichte van de markt?</li>
+              <li>Waar liggen de grootste operationele verbeterkansen?</li>
+              <li>Welke financiële risico's worden nu over het hoofd gezien?</li>
+              <li>Is uw bedrijf klaar voor groei, overname of herfinanciering?</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APPROACH ============ -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="section__header section__header--center reveal">
+        <div class="section__eyebrow">Onze aanpak</div>
+        <h2 class="section__title">Drie fasen naar helder inzicht</h2>
+        <p class="section__subtitle">Gestructureerd, grondig en altijd gericht op bruikbare conclusies.</p>
+      </div>
+      <div class="approach-grid">
+        <div class="approach-step reveal">
+          <div class="approach-step__number">1</div>
+          <h3 class="approach-step__title">Grondige evaluatie</h3>
+          <p class="approach-step__desc">Wij analyseren uw operationele processen, financiële prestaties en marktpositie. Management reporting, marges, werkkapitaal en kostenstructuur worden op detail beoordeeld.</p>
+        </div>
+        <div class="approach-step reveal">
+          <div class="approach-step__number">2</div>
+          <h3 class="approach-step__title">Kansen identificeren</h3>
+          <p class="approach-step__desc">Door diepgaande analyse en benchmarking tegen branchegenoten brengen wij verbetermogelijkheden in kaart die u vanuit de dagelijkse operatie niet altijd ziet.</p>
+        </div>
+        <div class="approach-step reveal">
+          <div class="approach-step__number">3</div>
+          <h3 class="approach-step__title">Concrete aanbevelingen</h3>
+          <p class="approach-step__desc">Geen dikke rapporten, maar maatwerk aanbevelingen die direct vertaalbaar zijn naar meetbare resultaten. Prioriteiten, tijdlijnen en verwachte impact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BENEFITS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header section__header--center reveal">
+        <div class="section__eyebrow">Resultaat</div>
+        <h2 class="section__title">Wat een business review u oplevert</h2>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-item reveal">
+          <div class="benefit-item__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a8398c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <div>
+            <div class="benefit-item__title">Operationeel inzicht</div>
+            <p class="benefit-item__desc">Een helder beeld van uw operationele sterke punten en verbetergebieden, onderbouwd met data.</p>
+          </div>
+        </div>
+        <div class="benefit-item reveal">
+          <div class="benefit-item__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ebecf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <div>
+            <div class="benefit-item__title">Groeikansen</div>
+            <p class="benefit-item__desc">Concrete, onderbouwde kansen voor omzetgroei en margeverbetering die direct uitvoerbaar zijn.</p>
+          </div>
+        </div>
+        <div class="benefit-item reveal">
+          <div class="benefit-item__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a8398c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div>
+            <div class="benefit-item__title">Data-gedreven beslissingen</div>
+            <p class="benefit-item__desc">Uw strategische keuzes onderbouwd met feiten in plaats van aannames. Beter besluiten, minder risico.</p>
+          </div>
+        </div>
+        <div class="benefit-item reveal">
+          <div class="benefit-item__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ebecf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div>
+            <div class="benefit-item__title">Concurrentiepositie</div>
+            <p class="benefit-item__desc">Inzicht in hoe u presteert ten opzichte van branchegenoten en waar u zich kunt onderscheiden.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ USE CASES ============ -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="section__header section__header--center reveal">
+        <div class="section__eyebrow">Toepassingen</div>
+        <h2 class="section__title">Wanneer een business review waardevol is</h2>
+      </div>
+      <div class="use-cases">
+        <div class="use-case reveal">
+          <span class="use-case__dot"></span>
+          Pre-acquisitie beoordeling
+        </div>
+        <div class="use-case reveal">
+          <span class="use-case__dot"></span>
+          Jaarlijkse strategische review
+        </div>
+        <div class="use-case reveal">
+          <span class="use-case__dot"></span>
+          Voorbereiding op herstructurering
+        </div>
+        <div class="use-case reveal">
+          <span class="use-case__dot"></span>
+          Investor readiness check
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RELATED SERVICES ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header section__header--center reveal">
+        <div class="section__eyebrow">Gerelateerde diensten</div>
+        <h2 class="section__title">Vaak gecombineerd met</h2>
+      </div>
+      <div class="services-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <a href="data-analyse.html" class="service-card reveal">
+          <div class="service-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a8398c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3 class="service-card__title">Data Analyse</h3>
+          <p class="service-card__desc">Ruwe data vertaald naar scherpe inzichten. Trends, risico's en kansen die u met het blote oog mist.</p>
+          <span class="service-card__link">Meer informatie <span>&rarr;</span></span>
+        </a>
+        <a href="waarderingen.html" class="service-card reveal">
+          <div class="service-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a8398c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 class="service-card__title">Waarderingen</h3>
+          <p class="service-card__desc">Onderbouwde waarderingen die standhouden in onderhandelingen bij fusies en overnames.</p>
+          <span class="service-card__link">Meer informatie <span>&rarr;</span></span>
+        </a>
+        <a href="buy-side-due-diligence.html" class="service-card reveal">
+          <div class="service-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a8398c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3 class="service-card__title">Buy-side Due Diligence</h3>
+          <p class="service-card__desc">Bevestig de aannames achter de deal. Wij identificeren risico's en kansen voordat u tekent.</p>
+          <span class="service-card__link">Meer informatie <span>&rarr;</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BANNER ============ -->
+  <section class="cta-banner">
+    <div class="container cta-banner__inner">
+      <h2 class="cta-banner__title">Wilt u weten waar uw bedrijf staat?</h2>
+      <p class="cta-banner__subtitle">Laten we in 30 minuten bespreken hoe een business review u helpt. Vrijblijvend, vertrouwelijk.</p>
+      <div class="cta-banner__actions">
+        <a href="../contact.html" class="btn btn--primary btn--lg">Plan een kennismaking <span class="btn__arrow">&rarr;</span></a>
+        <a href="tel:0338100245" class="btn btn--ghost btn--lg">Bel direct: 033 810 0245</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="../index.html" class="footer__logo">
+            <svg class="footer__logo-icon" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+              <text x="0" y="28" font-family="Inter, sans-serif" font-size="30" font-weight="900" fill="#ffffff">TIC</text>
+              <text x="68" y="28" font-family="Inter, sans-serif" font-size="22" font-weight="400" fill="#94a3b8">advisory</text>
+              <text x="68" y="38" font-family="Inter, sans-serif" font-size="9" font-weight="400" fill="#64748b" letter-spacing="2.5">due diligence</text>
+              <rect x="155" y="32" width="10" height="4" fill="#4EBECF"/>
+              <rect x="165" y="32" width="10" height="4" fill="#D82785"/>
+              <rect x="175" y="32" width="10" height="4" fill="#ECDA1A"/>
+              <rect x="185" y="32" width="5" height="4" fill="#E41C28"/>
+            </svg>
+          </a>
+          <p class="footer__desc">Onafhankelijk financieel adviesbureau gespecialiseerd in due diligence, waarderingen en business reviews.</p>
+        </div>
+        <div>
+          <div class="footer__heading">Diensten</div>
+          <a href="buy-side-due-diligence.html" class="footer__link">Buy-side Due Diligence</a>
+          <a href="vendor-due-diligence.html" class="footer__link">Vendor Due Diligence</a>
+          <a href="waarderingen.html" class="footer__link">Waarderingen</a>
+          <a href="business-reviews.html" class="footer__link">Business Reviews</a>
+          <a href="data-analyse.html" class="footer__link">Data Analyse</a>
+          <a href="whoa-services.html" class="footer__link">WHOA Services</a>
+        </div>
+        <div>
+          <div class="footer__heading">Over TIC</div>
+          <a href="../wie-zijn-wij.html" class="footer__link">Wie zijn wij</a>
+          <a href="../credentials.html" class="footer__link">Credentials</a>
+          <a href="../internationaal.html" class="footer__link">Internationaal</a>
+          <a href="../werken-bij.html" class="footer__link">Werken bij</a>
+        </div>
+        <div>
+          <div class="footer__heading">Contact</div>
+          <a href="tel:0338100245" class="footer__link">033 810 0245</a>
+          <a href="mailto:info@tic-advisory.nl" class="footer__link">info@tic-advisory.nl</a>
+          <a href="https://www.linkedin.com/company/tic-advisory/" target="_blank" rel="noopener" class="footer__link">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 TIC Advisory B.V. Alle rechten voorbehouden.</span>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/tic-advisory/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ STICKY MOBILE CTA ============ -->
+  <div class="sticky-cta" id="stickyCta">
+    <div class="sticky-cta__inner">
+      <a href="tel:0338100245" class="btn btn--secondary btn--sm sticky-cta__btn">Bel ons</a>
+      <a href="../contact.html" class="btn btn--primary btn--sm sticky-cta__btn">Vrijblijvend gesprek</a>
+    </div>
+  </div>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script>
+    // Mobile menu toggle
+    const toggle = document.getElementById('mobileToggle');
+    const menu = document.getElementById('mobileMenu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      const isOpen = menu.classList.contains('active');
+      toggle.setAttribute('aria-label', isOpen ? 'Menu sluiten' : 'Menu openen');
+      toggle.innerHTML = isOpen
+        ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
+        : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+    });
+
+    // Nav shadow on scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav--scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    // Reveal animations
+    requestIdleCallback(() => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>
